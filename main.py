@@ -77,11 +77,12 @@ def searchComp(name_compound):
 
 
 def run():
-    count = 24
-    for count in range(4230):
+    count = 707
+    while count != 4230:
 
             name = takeName(count)
             idComp = searchComp(name)
             down(idComp, count)
+            count = count +1
 
 run()
