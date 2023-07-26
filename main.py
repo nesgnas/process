@@ -8,6 +8,7 @@ import pandas as pd
 import requests
 
 
+
 def takeName(range):
     # read excel datafile
     f1 = pd.read_csv(
@@ -83,6 +84,6 @@ def run():
             name = takeName(count)
             idComp = searchComp(name)
             down(idComp, count)
-            count = count +1
+            count += 1
 
-run()
+
