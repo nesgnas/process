@@ -77,7 +77,7 @@ def searchComp(name_compound):
 
 
 def run():
-    count = 707
+    count = 4178
     while count != 4230:
 
             name = takeName(count)
