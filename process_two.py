@@ -1,41 +1,44 @@
 import os
 from os import path
-def takeOutFile(num):
+def get_fileName(num_Order):
     path_to_directory = r'./from web'
     for f in os.listdir(path_to_directory):
         name = path.basename(f)
         x = name.split("_")
-        while x[0] == str(num):
+        while x[0] == str(num_Order):
             # print(x)
-
             return name
 
-def workPubCHem(file):
-    url = r'./from web/'+file
+def seperate_useless_file(fileName):
+    url = r'./from web/' + fileName
     f = open(url,'r')
     for line in f:
         if (line.split(" ")[0]) == 'HETNAM':
+            f.close()
             return True
-
+    f.close()
     return False
 
-
-def fetchPubCHem(file):
-    if file != None:
-        url = r'./from web/'+str(file)
-        print("done")
-        f = open(url,'r')
-        for line in f:
-            print(line)
-
-def wF_fail_test(name):
+def writeFile_fail_test(fileName):
     f = open(r"./notfound/fail_first_test.txt", "a+")
-    f.writelines(str(name)+'\n')
+    f.writelines(str(fileName)+'\n')
     f.close
 
 
-for t in range(4200):
-    name = takeOutFile(t)
-    temp = workPubCHem(name)
-    if temp != True:
-        wF_fail_test(t)
+def run_process_two(range_Order): #filled_all_useless_file
+
+    num_Order = 0
+    while num_Order< range_Order:
+        fileName = get_fileName(num_Order)
+        temp = seperate_useless_file(fileName)
+
+        if temp != True:
+            writeFile_fail_test(num_Order)
+        num_Order +=1
+
+#run_process_two(4230)
+
+######################################
+# o process nay thi da loc ra duoc cac file khong tim thay phan co the fetch
+#########################################
+#run()
