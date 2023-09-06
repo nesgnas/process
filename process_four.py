@@ -55,6 +55,7 @@ def match_PubChem_and_Rcsb(fileName,num_Order):
 
     name_compound = name_compound_csv(num_Order)
     name_compound_PubChem = get_iupacName_PubChem(name_compound)
+    print(name_compound_PubChem)
 
     for i in range(count+1):
         if name_compound_PubChem == arr2[i]:
@@ -66,7 +67,7 @@ def run_process_four(num_Order):    #get_code_founded
     value = match_PubChem_and_Rcsb(fileName,num_Order)
     print(value)
     return value
-#run_process_four(65)
+run_process_four(4)
 ###################################
 # o process nay tim code cua hop chat tu file fetch dc roi tra ve "code" neu TRUE, "NONE" neu FALSE
 ###################################

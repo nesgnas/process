@@ -31,4 +31,4 @@ def run_process_five(range_Order):
     print("FOUNDED")
     print(count)
 
-run_process_five(4230)
+run_process_five(10)
