@@ -18,6 +18,7 @@ def take_response_PubChem(order_Num,idC):
   print(response.text)
 
 
+#def work_w_OpenBabel():
 
 
 
